@@ -7,6 +7,7 @@ from Helper.color import *
 # Importing algorithms 
 from Algorithms.Bubble_Sort import bubble_sort
 from Algorithms.Insertion_Sort import insertion_sort
+from Algorithms.Selection_Sort import selection_sort
 
 
 
@@ -17,7 +18,7 @@ window.maxsize(1000, 700)
 window.config(bg = LIGHT_GRAY)
 
 algorithm_name = StringVar()
-algo_list = ['Bubble Sort', 'Insertion Sort']
+algo_list = ['Bubble Sort', 'Insertion Sort','Selection Sort']
 
 speed_name = StringVar()
 speed_list = ['Fast', 'Medium', 'Slow']
@@ -30,8 +31,8 @@ def drawData(data, colorArray):
     canvas_width = 800
     canvas_height = 400
     x_width = canvas_width / (len(data) + 1)
-    offset = 4
-    spacing = 2
+    offset = 10
+    spacing = 5
     normalizedData = [i / max(data) for i in data]
 
     for i, height in enumerate(normalizedData):
@@ -40,6 +41,7 @@ def drawData(data, colorArray):
         x1 = (i + 1) * x_width + offset
         y1 = canvas_height
         canvas.create_rectangle(x0, y0, x1, y1, fill = colorArray[i])
+        canvas.create_text((x0+x1)/2, (y0+y1)/2,text=int(height*max(data)), fill="white",font=('Helvetica 15 bold'))
 
     window.update_idletasks()
 
@@ -48,7 +50,7 @@ def generate():
     global data
 
     data = []
-    for i in range(0, 100):
+    for i in range(0, 10):
         random_value = random.randint(1, 150)
         data.append(random_value)
 
@@ -57,11 +59,11 @@ def generate():
 # This function will set sorting speed
 def set_speed():
     if speed_menu.get() == 'Slow':
-        return 0.7
+        return 0.999
     elif speed_menu.get() == 'Medium':
         return 0.4
     else:
-        return 0.001
+        return 0.003
 
 # This function will Get input from a user for a custom array
 def get_input():
@@ -82,6 +84,8 @@ def sort():
         bubble_sort(data, drawData, timeTick)
     elif algo_menu.get() == 'Insertion Sort':
         insertion_sort(data, drawData, timeTick)
+    elif algo_menu.get() == 'Selection Sort':
+        selection_sort(data,drawData,timeTick)
     
 ### User interface
 UI_frame = Frame(window, width = 900, height = 300, bg = LIGHT_GRAY)
