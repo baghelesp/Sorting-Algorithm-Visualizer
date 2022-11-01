@@ -188,12 +188,15 @@ PURPLE = '#BF01FB'
 DARK_GREEN = '#19631B'
 ```
 ## OUTPUT (Bubble Sort)
-Initial screen (input array to sort) →
+### Initial screen (input array to sort) →
 
-The output window while performing sorting (in this case Bubble
-Sort with SLOW as speed parameter) →
+![alt text](https://github.com/GujarPrathamesh16/Sorting-Algorithm-Visualizer/blob/main/Output%20Images/Initial.png?raw=true)
 
-Final Output (displays sorted array) →
+### The output window while performing sorting (in this case Bubble Sort with SLOW as speed parameter) →
+![alt text](https://github.com/GujarPrathamesh16/Sorting-Algorithm-Visualizer/blob/main/Output%20Images/intermediateOutput.png?raw=true)
+
+### Final Output (displays sorted array) →
+![alt text](https://github.com/GujarPrathamesh16/Sorting-Algorithm-Visualizer/blob/main/Output%20Images/finalOutput.png?raw=true)
 
 ## PROJECT OUTCOME
 Through this assignment, we were able to successfully create a project using Tkinter in
