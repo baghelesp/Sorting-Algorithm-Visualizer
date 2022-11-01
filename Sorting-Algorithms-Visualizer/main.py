@@ -8,6 +8,7 @@ from Helper.color import *
 from Algorithms.Bubble_Sort import bubble_sort
 from Algorithms.Insertion_Sort import insertion_sort
 from Algorithms.Selection_Sort import selection_sort
+from Algorithms.quickSort import quick_sort
 
 
 
@@ -18,7 +19,7 @@ window.maxsize(1000, 700)
 window.config(bg = LIGHT_GRAY)
 
 algorithm_name = StringVar()
-algo_list = ['Bubble Sort', 'Insertion Sort','Selection Sort']
+algo_list = ['Bubble Sort', 'Insertion Sort','Selection Sort','Quick Sort']
 
 speed_name = StringVar()
 speed_list = ['Fast', 'Medium', 'Slow']
@@ -86,6 +87,8 @@ def sort():
         insertion_sort(data, drawData, timeTick)
     elif algo_menu.get() == 'Selection Sort':
         selection_sort(data,drawData,timeTick)
+    elif algo_menu.get() == 'Quick Sort':
+        quick_sort(data,0,len(data)-1,drawData,timeTick)
     
 ### User interface
 UI_frame = Frame(window, width = 900, height = 300, bg = LIGHT_GRAY)
